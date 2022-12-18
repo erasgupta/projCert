@@ -4,11 +4,11 @@
   tasks:
     - name: install docker
       yum:
-        pkg: docker
+        name: docker
         state: present
     - name: install git
       yum:
-        pkg: git
+        name: git
         state: present
     - name: start docker
       service:
