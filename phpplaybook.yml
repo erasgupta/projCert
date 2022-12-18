@@ -1,21 +1,21 @@
 ---
-- hosts: all
+- hosts: node
   become: true
   tasks:
-    - name: install ntp
+    - name: install docker
       yum:
-        pkg: ntp
+        pkg: docker
         state: present
-    - name: install vim
+    - name: install git
       yum:
-        pkg: vim
+        pkg: git
         state: present
-    - name: start ntp service
+    - name: start docker
       service:
-        name: ntpd
+        name: docker
         state: started
-        enabled: true
-    - name: run update
-      yum:
-        update_cache: yes
+    - name: pull the docker file
+      command: docker pull devopsedu/webapp:latest
+    - name: run the docker file
+      command: docker run -it -P --name webappimage devopsedu/webapp
 
