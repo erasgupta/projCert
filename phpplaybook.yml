@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install ntp
+      yum:
+        pkg: ntp
+        state: present
+    - name: install vim
+      yum:
+        pkg: vim
+        state: present
+    - name: start ntp service
+      service:
+        name: ntpd
+        state: started
+        enabled: true
+    - name: run update
+      yum:
+        update_cache: yes
+
