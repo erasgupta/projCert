@@ -2,10 +2,6 @@
 - hosts: node
   become: true
   tasks:
-    - name: install docker
-      yum:
-        name: docker
-        state: present
     - name: install git
       yum:
         name: git
