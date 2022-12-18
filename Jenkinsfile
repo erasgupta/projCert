@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Deploy') {
           steps {
-            sh 'ansible-playbook phpplaybook.yml'
+            ansiblePlaybook credentialsId: 'ansiblekey', inventory: '/etc/ansible/hosts', playbook: 'phpplaybook.yml'
            }
         }
     }
