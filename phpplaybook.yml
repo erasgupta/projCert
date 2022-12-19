@@ -11,7 +11,7 @@
         name: docker
         state: started
     - name: pull the docker file
-      command: docker pull devopsedu/webapp:latest
+      command: docker pull erashish01/phpwebapp:latest
     - name: run the docker file
-      command: docker run -it -p 8080:8080 --name webappimage devopsedu/webapp
+      command: docker run -it -p 8080:8080 --name webappimage erashish01/phpwebapp
 
