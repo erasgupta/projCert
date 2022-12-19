@@ -13,5 +13,5 @@
     - name: pull the docker file
       command: docker pull erashish01/phpwebapp:latest
     - name: run the docker file
-      command: docker run -it -p 8080:8080 --name webappimage erashish01/phpwebapp
+      command: docker run -dt -P --name webappimage erashish01/phpwebapp
 
