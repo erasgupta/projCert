@@ -13,5 +13,5 @@
     - name: pull the docker file
       command: docker pull devopsedu/webapp:latest
     - name: run the docker file
-      command: docker run -it -P --name webappimage devopsedu/webapp
+      command: docker run -p 8080:8080 --name webappimage devopsedu/webapp
 
